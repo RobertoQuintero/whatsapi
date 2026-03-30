@@ -9,6 +9,6 @@ export const receivedMessage = (req, res) => {
     
     res.json({
         status: 'success',
-        message: 'Message received successfully'
+        message: 'Message received successfully test'
     });
 }
