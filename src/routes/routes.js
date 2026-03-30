@@ -4,6 +4,6 @@ import { verifyToken, receivedMessage } from '../controllers/whatsappControllers
 const router = express.Router();
 
 router.get('/', verifyToken);
-router.post('/msg', receivedMessage);
+router.post('/', receivedMessage);
 
 export default router;
