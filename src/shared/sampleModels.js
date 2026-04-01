@@ -1,4 +1,3 @@
-import e from "express";
 
  export const sampleText=(textResponse,number)=>{
     const data = JSON.stringify({

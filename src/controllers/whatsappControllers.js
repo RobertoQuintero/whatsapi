@@ -2,7 +2,7 @@ import fs from 'fs';
 // const myConsole = new console.Console(fs.createWriteStream('./logs.txt'));
 
 import { sendWhatsAppMessage } from '../services/whatsappService.js';
-
+import { sampleText, sampleImage, sampleAudio, sampleVideo, sampleDocument, sampleLocation, sampleInteractiveButton, sampleInteractiveList } from '../shared/sampleModels.js';    
 export const verifyToken = (req, res) => {
 
     try {
