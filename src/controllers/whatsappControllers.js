@@ -34,10 +34,13 @@ export const receivedMessage = (req, res) => {
         const entry = req.body.entry[0];
         const changes = entry.changes[0];
         const value = changes.value;
-        const messages = value.messages[0];
-        const text= getTextUser(messages);
+        if(typeof value.messages!=undefined){
+            const messages = value.messages[0];
+            const text= getTextUser(messages);
+    
+            console.log({text});
 
-        console.log({text});
+        }
 
         res.status(200).send('EVENT_RECEIVED');
     } catch (error) {
