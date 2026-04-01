@@ -1,11 +1,13 @@
 import fs from 'fs';
 // const myConsole = new console.Console(fs.createWriteStream('./logs.txt'));
-
+import dotenv from 'dotenv';
+import { sendWhatsAppMessage } from '../../services/whatsappService';
+dotenv.config();
 export const verifyToken = (req, res) => {
 
     try {
 
-        const accessToken= "OUYOIUYOIUYOUYUYXUYCVXUYVISUDFYISUDY"
+        const accessToken= process.env.TOKEN;
         const token=req.query["hub.verify_token"];
         const challenge=req.query["hub.challenge"];
 
@@ -39,6 +41,7 @@ export const receivedMessage = (req, res) => {
             const text= getTextUser(messages);
     
             console.log({text});
+            sendWhatsAppMessage(messages.from, 'Respuesta: ' + text);
 
         }
 
