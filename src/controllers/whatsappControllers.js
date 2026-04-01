@@ -31,10 +31,10 @@ export const verifyToken = (req, res) => {
 export const receivedMessage = (req, res) => {
 
     try {
-        const entry = req.body.entry[0];
-        const changes = entry.changes[0];
-        const value = changes.value;
-        if(typeof value.messages!=undefined){
+        const entry = req.body?.entry[0];
+        const changes = entry?.changes[0];
+        const value = changes?.value;
+        if(typeof value?.messages !== 'undefined' && value.messages.length > 0){
             const messages = value.messages[0];
             const text= getTextUser(messages);
     
