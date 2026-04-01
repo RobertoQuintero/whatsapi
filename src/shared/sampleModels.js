@@ -98,41 +98,41 @@ export const sampleInteractiveList=(number,text)=>{
         "interactive": {
             "type": "list",
             "body": {
-                "text": text
+                "text": "✅ Tengo estas opciones"
             },
             "footer": {
-                "text": "Footer del mensaje"
+                "text": "Selecciona una de las opciones para poder atenderte"
             },
             "action": {
-                "button": "Selecciona una opción",  
+                "button": "Ver opciones",
                 "sections": [
                     {
-                        "title": "Sección 1",
+                        "title": "Compra y vende productos",
                         "rows": [
                             {
-                                "id": "option1",
-                                "title": "Opción 1",
-                                "description": "Descripción de la opción 1"
+                                "id": "main-comprar",
+                                "title": "Comprar",
+                                "description": "Compra los mejores productos para tu hogar"
                             },
                             {
-                                "id": "option2",
-                                "title": "Opción 2",
-                                "description": "Descripción de la opción 2"
+                                "id": "main-vender",
+                                "title": "Vender",
+                                "description": "Vende tus productos"
                             }
                         ]
                     },
                     {
-                        "title": "Sección 2",
+                        "title": "📍Centro de atención",
                         "rows": [
                             {
-                                "id": "option3",
-                                "title": "Opción 3",
-                                "description": "Descripción de la opción 3"
+                                "id": "main-agencia",
+                                "title": "Agencia",
+                                "description": "Puedes visitar nuestra agencia."
                             },
                             {
-                                "id": "option4",
-                                "title": "Opción 4",
-                                "description": "Descripción de la opción 4"
+                                "id": "main-contacto",
+                                "title": "Centro de contacto",
+                                "description": "Te atenderá uno de nuestro agentes."
                             }
                         ]
                     }
