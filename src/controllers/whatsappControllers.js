@@ -39,9 +39,43 @@ export const receivedMessage = (req, res) => {
         if(typeof value?.messages !== 'undefined' && value.messages.length > 0){
             const messages = value.messages[0];
             const text= getTextUser(messages);
-            console.log(messages.from)
             console.log({text});
-            sendWhatsAppMessage(messages.from, 'Respuesta: ' + text);
+            if(text==='text'){
+                const data= sampleText('Respuesta: ' + text, messages.from);
+                sendWhatsAppMessage( data);
+            }
+            else if(text==='image'){
+                const data= sampleImage('https://www.w3schools.com/w3css/img_lights.jpg', messages.from);
+                sendWhatsAppMessage( data);
+            }
+                else if(text==='audio'){
+                const data= sampleAudio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', messages.from);
+                sendWhatsAppMessage( data);
+            }
+                else if(text==='video'){
+                const data= sampleVideo('https://www.w3schools.com/html/mov_bbb.mp4', messages.from);
+                sendWhatsAppMessage( data);
+            }
+                else if(text==='document'){
+                const data= sampleDocument('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', messages.from);
+                sendWhatsAppMessage( data);
+            }
+                else if(text==='location'){
+                const data= sampleLocation(messages.from);
+                sendWhatsAppMessage( data);
+            }
+                else if(text==='button'){
+                const data= sampleInteractiveButton(messages.from, '¿Qué deseas hacer?');
+                sendWhatsAppMessage( data);
+            }
+                else if(text==='list'){
+                const data= sampleInteractiveList(messages.from, 'Selecciona una opción');
+                sendWhatsAppMessage( data);
+            }else{
+                const data= sampleText('No seleccionaste nada ' + text, messages.from);
+                sendWhatsAppMessage( data);
+            }
+
 
         }
 

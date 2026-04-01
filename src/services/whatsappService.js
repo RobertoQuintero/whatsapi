@@ -1,16 +1,6 @@
 import https from 'https';
 
-
-
-export const sendWhatsAppMessage = (phoneNumber, message) => {
-    const data = JSON.stringify({
-    "messaging_product": "whatsapp",    
-    "to": phoneNumber,
-    "type": "text",
-    "text": {
-        "body": message
-    }
-});
+export const sendWhatsAppMessage = (data) => {
 
     const options = {
         hostname: 'graph.facebook.com',
