@@ -1,7 +1,6 @@
 import https from 'https';
 
- import dotenv from 'dotenv';   
-dotenv.config();
+
 
 export const sendWhatsAppMessage = (phoneNumber, message) => {
     const data = JSON.stringify({

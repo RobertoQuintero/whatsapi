@@ -1,8 +1,8 @@
 import fs from 'fs';
 // const myConsole = new console.Console(fs.createWriteStream('./logs.txt'));
-import dotenv from 'dotenv';
-import { sendWhatsAppMessage } from '../../services/whatsappService';
-dotenv.config();
+
+import { sendWhatsAppMessage } from '../services/whatsappService.js';
+
 export const verifyToken = (req, res) => {
 
     try {
