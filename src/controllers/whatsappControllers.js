@@ -1,5 +1,5 @@
 import fs from 'fs';
-const myConsole = new console.Console(fs.createWriteStream('./logs.txt'));
+// const myConsole = new console.Console(fs.createWriteStream('./logs.txt'));
 
 export const verifyToken = (req, res) => {
 
@@ -20,6 +20,7 @@ export const verifyToken = (req, res) => {
         
         
     } catch (error) {
+        console.log({error})
         res.status(500).json({
             status: 'error',
             message: 'Token verification failed'
@@ -33,17 +34,32 @@ export const receivedMessage = (req, res) => {
         const entry = req.body.entry[0];
         const changes = entry.changes[0];
         const value = changes.value;
-        const messages = value.messages;
+        const messages = value.messages[0];
+        const text= getTextUser(messages);
 
-        myConsole.log(messages)
+        console.log({text});
 
         res.status(200).send('EVENT_RECEIVED');
     } catch (error) {
+        console.log({error})
         res.status(500).send('EVENT_RECEIVED');
     }
     
-    res.json({
-        status: 'success',
-        message: 'Message received successfully test'
-    });
+   
+}
+
+const getTextUser = (messages) => {
+    let text = '';
+    const typeMessage = messages.type;
+    if (typeMessage === 'text') {
+        text = messages.text.body;
+    } else if (typeMessage === 'interactive') {
+        const interactiveType = messages.interactive.type;
+        if (interactiveType === 'button_reply') {
+            text = messages.interactive.button_reply.title;
+        } else if (interactiveType === 'list_reply') {
+            text = messages.interactive.list_reply.title;
+        }   
+    }
+    return text;
 }
