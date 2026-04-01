@@ -53,7 +53,7 @@ export const receivedMessage = (req, res) => {
                 sendWhatsAppMessage( data);
             }
                 else if(text==='video'){
-                const data= sampleVideo('https://www.w3schools.com/html/mov_bbb.mp4', messages.from);
+                const data= sampleVideo("https://res.cloudinary.com/dmq9e2wuv/video/upload/v1774825897/jojc637ef57lpkik3lox.mp4, messages.from);
                 sendWhatsAppMessage( data);
             }
                 else if(text==='document'){
