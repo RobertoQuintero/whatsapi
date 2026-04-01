@@ -39,7 +39,7 @@ export const receivedMessage = (req, res) => {
         if(typeof value?.messages !== 'undefined' && value.messages.length > 0){
             const messages = value.messages[0];
             const text= getTextUser(messages);
-    
+            console.log(messages.from)
             console.log({text});
             sendWhatsAppMessage(messages.from, 'Respuesta: ' + text);
 
