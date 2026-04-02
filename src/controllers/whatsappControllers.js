@@ -1,8 +1,8 @@
 import fs from 'fs';
 // const myConsole = new console.Console(fs.createWriteStream('./logs.txt'));
-
-import { sendWhatsAppMessage } from '../services/whatsappService.js';
-import { sampleText, sampleImage, sampleAudio, sampleVideo, sampleDocument, sampleLocation, sampleInteractiveButton, sampleInteractiveList } from '../shared/sampleModels.js';    
+import {Process } from '../shared/processMessage.js';
+// import { sendWhatsAppMessage } from '../services/whatsappService.js';
+// import { sampleText, sampleImage, sampleAudio, sampleVideo, sampleDocument, sampleLocation, sampleInteractiveButton, sampleInteractiveList } from '../shared/sampleModels.js';    
 export const verifyToken = (req, res) => {
 
     try {
@@ -40,41 +40,45 @@ export const receivedMessage = (req, res) => {
             const messages = value.messages[0];
             const text= getTextUser(messages);
             console.log({text});
-            if(text==='text'){
-                const data= sampleText('Respuesta: ' + text, messages.from);
-                sendWhatsAppMessage( data);
-            }
-            else if(text==='image'){
-                const data= sampleImage('https://www.w3schools.com/w3css/img_lights.jpg', messages.from);
-                sendWhatsAppMessage( data);
-            }
-                else if(text==='audio'){
-                const data= sampleAudio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', messages.from);
-                sendWhatsAppMessage( data);
-            }
-                else if(text==='video'){
-                const data= sampleVideo("https://res.cloudinary.com/dmq9e2wuv/video/upload/v1774825897/jojc637ef57lpkik3lox.mp4", messages.from);
-                sendWhatsAppMessage( data);
-            }
-                else if(text==='document'){
-                const data= sampleDocument('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', messages.from);
-                sendWhatsAppMessage( data);
-            }
-                else if(text==='location'){
-                const data= sampleLocation(messages.from);
-                sendWhatsAppMessage( data);
-            }
-                else if(text==='button'){
-                const data= sampleInteractiveButton(messages.from, '¿Qué deseas hacer?');
-                sendWhatsAppMessage( data);
-            }
-                else if(text==='list'){
-                const data= sampleInteractiveList(messages.from, 'Selecciona una opción');
-                sendWhatsAppMessage( data);
-            }else{
-                const data= sampleText('No seleccionaste nada ' + text, messages.from);
-                sendWhatsAppMessage( data);
-            }
+
+                Process(text, messages.from);
+
+
+            // if(text==='text'){
+            //     const data= sampleText('Respuesta: ' + text, messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
+            // else if(text==='image'){
+            //     const data= sampleImage('https://www.w3schools.com/w3css/img_lights.jpg', messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
+            //     else if(text==='audio'){
+            //     const data= sampleAudio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
+            //     else if(text==='video'){
+            //     const data= sampleVideo("https://res.cloudinary.com/dmq9e2wuv/video/upload/v1774825897/jojc637ef57lpkik3lox.mp4", messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
+            //     else if(text==='document'){
+            //     const data= sampleDocument('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
+            //     else if(text==='location'){
+            //     const data= sampleLocation(messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
+            //     else if(text==='button'){
+            //     const data= sampleInteractiveButton(messages.from, '¿Qué deseas hacer?');
+            //     sendWhatsAppMessage( data);
+            // }
+            //     else if(text==='list'){
+            //     const data= sampleInteractiveList(messages.from, 'Selecciona una opción');
+            //     sendWhatsAppMessage( data);
+            // }else{
+            //     const data= sampleText('No seleccionaste nada ' + text, messages.from);
+            //     sendWhatsAppMessage( data);
+            // }
 
 
         }
