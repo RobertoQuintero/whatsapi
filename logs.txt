@@ -1,3 +1,8 @@
 {
     hola
 }
+
+
+
+Se produjo un problema al registrar +52 17835802537
+Unsupported post request. Object with ID '1067967966400773' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api

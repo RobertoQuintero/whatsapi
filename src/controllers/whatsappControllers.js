@@ -40,7 +40,7 @@ export const receivedMessage = (req, res) => {
             const messages = value.messages[0];
             const text= getTextUser(messages);
             console.log({text});
-
+                
                 Process(text, messages.from);
 
 

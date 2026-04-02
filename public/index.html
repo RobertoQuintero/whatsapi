@@ -1,18 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatsapi</title>
+    <title>Aviso de Privacidad - Emilio Esteban Hernandez Diaz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 24px;
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+        p, li {
+            font-size: 15px;
+            text-align: justify;
+        }
+        .contact-info {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            margin: 20px 0;
+        }
+        .sensitive-data {
+            border: 1px solid #e74c3c;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #fdf2f2;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>hola mundo</h1>
-    <pre id="logs">Cargando logs...</pre>
-    <script>
-        fetch('/logs')
-            .then(res => res.text())
-            .then(text => document.getElementById('logs').textContent = text)
-            .catch(() => document.getElementById('logs').textContent = 'Error al cargar los logs.');
-    </script>
+
+<div class="container">
+    <h1>Aviso de Privacidad Integral</h1>
+    
+    <p>En cumplimiento con la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</strong>, se presenta el siguiente aviso de privacidad:</p>
+
+    <h2>1. Identidad y Domicilio del Responsable</h2>
+    <p>El Responsable del tratamiento de sus datos personales es <strong>Roberto Carlos Quintero Martínez</strong>, con domicilio en Calle Rio Misantla, Manzana 11, Lote 4, Colonia El Mollejón, Poza Rica de Hidalgo, Veracruz, C.P. 93240.</p>
+
+    <h2>2. Datos Personales Recabados</h2>
+    <p>Recabamos los siguientes datos para las finalidades descritas en este documento:</p>
+    <ul>
+        <li><strong>Identificación:</strong> Nombre completo, correo electrónico y teléfono.</li>
+        <li><strong>Fiscales:</strong> RFC y domicilio de facturación.</li>
+    </ul>
+
+    <div class="sensitive-data">
+        <strong>Datos Personales Sensibles:</strong> Se informa que también se recaban datos relacionados con el estado de salud. Estos son tratados bajo las más estrictas medidas de seguridad técnica y administrativa para garantizar su confidencialidad.
+    </div>
+
+    <h2>3. Finalidades del Tratamiento</h2>
+    <p>Sus datos serán utilizados para los siguientes fines necesarios:</p>
+    <ul>
+        <li>Proveer servicios de desarrollo web, programación y consultoría técnica.</li>
+        <li>Gestión y mantenimiento de bases de datos.</li>
+        <li>Emisión de facturación electrónica.</li>
+        <li>Atención de soporte técnico y cumplimiento de obligaciones contractuales.</li>
+    </ul>
+
+    <h2>4. Transferencia de Datos</h2>
+    <p>Para la correcta prestación de nuestros servicios, sus datos podrán ser transferidos y tratados por los siguientes terceros:</p>
+    <ul>
+        <li><strong>Proveedores de Hosting:</strong> Para el alojamiento de aplicaciones y almacenamiento de bases de datos.</li>
+        <li><strong>Facturapi:</strong> Para la generación de comprobantes fiscales digitales.</li>
+    </ul>
+
+    <h2>5. Uso de Cookies</h2>
+    <p>Este sitio web utiliza únicamente <strong>cookies técnicas</strong>. Su única función es almacenar el token de sesión para permitir la navegación segura y personalizada del usuario. No se utilizan herramientas de rastreo ni cookies de publicidad de terceros.</p>
+
+    <h2>6. Derechos ARCO</h2>
+    <p>Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos. Para ejercer estos derechos, puede ponerse en contacto con nosotros a través del siguiente medio:</p>
+    
+    <div class="contact-info">
+        <strong>Correo Electrónico:</strong> <a href="mailto:langdonhp435@gmail.com">langdonhp435@gmail.com</a>
+    </div>
+
+    <h2>7. Seguridad de la Información</h2>
+    <p>Implementamos medidas de seguridad de nivel profesional, incluyendo el cifrado de bases de datos y protocolos de acceso restringido, especialmente para el manejo de los datos sensibles mencionados anteriormente.</p>
+
+    <hr>
+    <footer>
+        Última actualización: Abril 2026<br>
+        Poza Rica, Veracruz, México.
+    </footer>
+</div>
+
 </body>
 </html>
