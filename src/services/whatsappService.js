@@ -5,7 +5,7 @@ export const sendWhatsAppMessage = (data) => {
     const options = {
         hostname: 'graph.facebook.com',
         port: 443,
-        path: '/v22.0/1035260193009448/messages',
+        path: '/v25.0/1154758054393950/messages',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
